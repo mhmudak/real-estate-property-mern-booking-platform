@@ -18,13 +18,23 @@ Users can browse properties for sale/rent, mark favorites, and (in future) regis
 ## 📸 Preview
 
 <p align="center">
-<p>Purchases with Filtering Screen</p>
+<p>📸 Purchases with Filtering Screen</p>
   <img src="./imgForReadMe/Purchases_ss.jpg" alt="Real Estate App Purchases Preview" width="800" />  
 </p>
 
 <p align="center">
-<p>My Favorites Screen</p>
+<p>📸 My Favorites Screen</p>
   <img src="./imgForReadMe/favorites_ss.jpg" alt="Real Estate App Favorites Preview" width="800" />  
+</p>
+
+<p align="center">
+<p>📸 Property Details</p>
+  <img src="./imgForReadMe/PropertyDetails_ss.jpg" alt="Real Estate App Property Details Preview" width="800" />  
+</p>
+
+<p align="center">
+<p>📸 Signup/Login</p>
+  <img src="./imgForReadMe/SignUpLogin_ss.jpg" alt="Real Estate App SignUp/Login Preview" width="800" />  
 </p>
 
 ---
@@ -126,7 +136,7 @@ Login / Signup button opens the authentication popup (AuthPopup).
 
 On property detail page, full property info is displayed (images carousel, features, agent contact, etc.).
 
-🔮 Future Improvements
+## 🔮 Future Improvements
 
 Integrate backend with Node.js / Express / MongoDB — store apartments, user accounts, favorites, orders in DB.
 
@@ -144,12 +154,12 @@ Tests (unit / integration).
 
 Deployment (heroku / Vercel / Netlify + MongoDB Atlas).
 
-📝 License
+## 📝 License
 
 This project is MIT-licensed. See LICENSE
 for details.
 
-💬 Contact / Author
+## 💬 Contact / Author
 
 Developer: Mahmoud Akoum
 
