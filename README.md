@@ -78,7 +78,7 @@ cd real-estate-property-mern-booking-platform
 
 4. Open http://localhost:3000 (or port shown) in your browser.
 
-## Project Structure
+## 🚀 Project Structure
 
 src/
 ┣ assets/ # images, icons, etc.
