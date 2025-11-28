@@ -138,6 +138,8 @@ On property detail page, full property info is displayed (images carousel, featu
 
 ## 🔮 Future Improvements
 
+Add Booking Button and Form in Property Details, to let the users enter their info and book an appointment at an exact time and date.
+
 Integrate backend with Node.js / Express / MongoDB — store apartments, user accounts, favorites, orders in DB.
 
 Implement user authentication (sign up, login, protected routes).
