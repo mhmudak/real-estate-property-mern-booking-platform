@@ -94,7 +94,9 @@ function ApartmentCard({
 
         <div className="icon-item">
           <MapPin size={18} />
-          <span className="apartment-location">{region}, {city}</span>
+          <span className="apartment-location">
+            {region}, {city}
+          </span>
         </div>
 
         <div className="apartment-icons">
@@ -119,7 +121,7 @@ function ApartmentCard({
           })}
         </p>
 
-        <button className="add-to-cart-btn">Add to Cart</button>
+        <button className="add-to-cart-btn">More Details</button>
       </div>
     </div>
   );

@@ -54,6 +54,10 @@
   stroke-width: 1.8;
 }
 
+.category-btn span {
+  text-transform: none;
+}
+
 /* ===== CARD GRID ===== */
 .card-grid {
   display: flex;
@@ -106,7 +110,6 @@
   cursor: not-allowed;
 }
 
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .card-grid {
@@ -131,6 +134,7 @@
     padding: 8px 14px;
   }
 }
+
 
 @media (max-width: 600px) {
   .purchase-page {

@@ -5,7 +5,7 @@ import PurchaseProperties from "./Pages/PurchaseProperties/PurchaseProperties";
 import About from "./Pages/About/About";
 import Contact from "./Pages/ContactUs/ContactUs";
 import ApartmentDetails from "./Pages/ApartmentDetails/ApartmentDetails";
-
+import MyFavorites from "./Pages/MyFavorites/MyFavorites";
 
 export default function App() {
   return (
@@ -13,6 +13,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/purchase" element={<PurchaseProperties />} />
+        <Route path="/myfavorites" element={<MyFavorites />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/apartments/:id" element={<ApartmentDetails />} />
