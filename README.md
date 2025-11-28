@@ -1,7 +1,11 @@
 # React + Vite
 
 ## 🔗 Live Demo  
-Check the live demo here: **[Real-Estate Demo](https://neon-vacherin-8480db.netlify.app/)**  
+<p align="center">
+  <a href="https://neon-vacherin-8480db.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-1e3a8a?style=for-the-badge&logo=react&logoColor=white&labelColor=2a4db3" alt="Live Demo"/>
+  </a>
+</p> 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
