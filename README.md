@@ -18,10 +18,12 @@ Users can browse properties for sale/rent, mark favorites, and (in future) regis
 ## 📸 Preview
 
 <p align="center">
+<p>Purchases with Filtering Screen</p>
   <img src="./imgForReadMe/Purchases_ss.jpg" alt="Real Estate App Purchases Preview" width="800" />  
 </p>
 
 <p align="center">
+<p>My Favorites Screen</p>
   <img src="./imgForReadMe/favorites_ss.jpg" alt="Real Estate App Favorites Preview" width="800" />  
 </p>
 
@@ -117,9 +119,7 @@ On each property card, users can:
 
 Click the heart icon to add/remove property from favorites (stored in localStorage).
 
-
 In the header:
-
 
 Login / Signup button opens the authentication popup (AuthPopup).
 
