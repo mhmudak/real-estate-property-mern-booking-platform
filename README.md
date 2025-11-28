@@ -17,8 +17,10 @@ Users can browse properties for sale/rent, mark favorites, add apartments to a �
 
 ## 📸 Preview
 
-<p align="center">  
-  <img src="./images/preview.png" alt="Real Estate App Preview" width="800" />  
+![Cart](./imgForReadMe/icon.png)
+
+<p align="center">
+  <img src="./imgForReadMe/icon.png" alt="Real Estate App Preview" width="800" />  
 </p>
 
 > 💡 Replace `./images/preview.png` with your actual screenshot path.
