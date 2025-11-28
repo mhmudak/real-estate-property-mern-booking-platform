@@ -82,7 +82,7 @@ cd real-estate-property-mern-booking-platform
 4. Open http://localhost:3000 (or port shown) in your browser.
 
 ## 🚀 Project Structure
-
+<pre> ```
 src/
 ┣ assets/ # images, icons, etc.
 ┣ components/ # reusable React components
@@ -92,22 +92,23 @@ src/
 ┃ ┣ ApartmentsList/
 ┃ ┣ AuthPopup/ # login/signup popup component
 ┃ ┗ ...  
- ┣ Pages/ # page-level components / routes
-┃ ┣ Home.jsx  
+┣ Pages/ # page-level components / routes
+ ┃ ┣ Home.jsx  
  ┃ ┣ PurchaseProperties.jsx  
  ┃ ┣ ApartmentDetails.jsx  
  ┃ ┗ ...  
- ┣ data/ # static data (for now)
-┃ ┗ apartmentsData.js  
- ┣ utils/ # utility/helper files  
+┣ data/ # static data (for now)
+ ┃ ┗ apartmentsData.js  
+┣ utils/ # utility/helper files  
  ┃ ┣ cartUtils.js  
  ┃ ┣ favoriteUtils.js  
  ┃ ┗ ...  
  ┣ App.jsx  
  ┣ index.jsx  
  ┗ ...
+``` </pre>
 
-🎯 Usage / How It Works
+## 🎯 Usage / How It Works
 
 On the homepage, users see featured properties displayed as cards (ApartmentCard).
 
