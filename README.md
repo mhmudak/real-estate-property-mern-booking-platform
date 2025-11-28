@@ -1,7 +1,7 @@
 # 🏠 Real-Estate Property MERN Booking Platform
 
 A simple real-estate web application built with **React (frontend)** and **Node/Express + MongoDB (backend — planned)**.  
-Users can browse properties for sale/rent, mark favorites, add apartments to a “cart”, and (in future) register, login, and manage their own listings.
+Users can browse properties for sale/rent, mark favorites, and (in future) register, login, and manage their own listings.
 
 ---
 
@@ -17,7 +17,7 @@ Users can browse properties for sale/rent, mark favorites, add apartments to a �
 
 ## 📸 Preview
 
-![Cart](./imgForReadMe/icon.png)
+![Cart](./imgForReadMe/favorites_ss.png)
 
 <p align="center">
   <img src="./imgForReadMe/icon.png" alt="Real Estate App Preview" width="800" />  
@@ -46,7 +46,6 @@ Users can browse properties for sale/rent, mark favorites, add apartments to a �
 - Filter by **property type** (Apartment, Villa, Land, House, Commercial, etc.).
 - Filter by **location** (region / city).
 - ❤️ **Favorites:** mark/unmark properties, stored in localStorage.
-- 🛒 **Cart / CartPopup:** add apartments to cart, adjust quantity, remove items, view total.
 - 📱 Responsive UI (desktop & mobile).
 - 🧩 Modular structure (components, pages, utils, data) — ready for MERN backend integration.
 
@@ -89,7 +88,6 @@ src/
 ┃ ┣ Footer/
 ┃ ┣ ApartmentCard/
 ┃ ┣ ApartmentsList/
-┃ ┣ CartPopup/
 ┃ ┣ AuthPopup/ # login/signup popup component
 ┃ ┗ ...  
  ┣ Pages/ # page-level components / routes
@@ -119,11 +117,9 @@ On each property card, users can:
 
 Click the heart icon to add/remove property from favorites (stored in localStorage).
 
-Click “Add to Cart” to add property to the cart (also localStorage).
 
 In the header:
 
-Shopping-cart icon opens a popup (CartPopup) showing saved properties, with quantity controls, remove buttons, and total price.
 
 Login / Signup button opens the authentication popup (AuthPopup).
 
