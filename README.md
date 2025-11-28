@@ -17,7 +17,9 @@ Users can browse properties for sale/rent, mark favorites, and (in future) regis
 
 ## 📸 Preview
 
-![Favorite](./imgForReadMe/favorites_ss.jpg)
+<p align="center">
+  <img src="./imgForReadMe/Purchases_ss.jpg" alt="Real Estate App Purchases Preview" width="800" />  
+</p>
 
 <p align="center">
   <img src="./imgForReadMe/favorites_ss.jpg" alt="Real Estate App Favorites Preview" width="800" />  
