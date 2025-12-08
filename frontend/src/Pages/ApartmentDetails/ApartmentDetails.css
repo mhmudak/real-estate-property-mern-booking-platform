@@ -311,7 +311,7 @@ section h2 {
 .disabled-btn {
   background: #cbd5e1 !important;
   color: #475569 !important;
-  cursor: not-allowed;
+  cursor: not-allowed !important;
   box-shadow: none;
   transform: none !important;
   opacity: 0.8;
