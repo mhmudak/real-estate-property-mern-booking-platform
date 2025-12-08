@@ -8,7 +8,7 @@ Users can browse properties for sale/rent, mark favorites, and (in future) regis
 ## 🔗 Live Demo
 
 <p align="center">
-  <a href="https://neon-vacherin-8480db.netlify.app/" target="_blank">
+  <a href="https://6936b7ce9520bf16eaf56446--wondrous-peony-99def4.netlify.app/" target="_blank">
     <img src="https://img.shields.io/badge/Live_Demo-1e3a8a?style=for-the-badge&logo=react&logoColor=white&labelColor=2a4db3" alt="Live Demo"/>
   </a>
 </p>
