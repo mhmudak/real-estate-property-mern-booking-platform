@@ -1,0 +1,182 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #1e3a8a;
+  color: white;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1000;
+}
+
+/* ---------- LOGO ---------- */
+h1.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+h1.logo a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ---------- NAVIGATION ---------- */
+.nav-list {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-list a,
+.nav-list span {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 3px;
+  background-color: #a5b4fc;
+  transition: width 0.3s ease;
+}
+
+.nav-list a:hover::after {
+  width: 100%; /* underline expands smoothly */
+}
+
+/* ---------- DROPDOWN ---------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  align-self: center;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  min-width: 170px;
+  z-index: 1001;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  transition: background 0.3s;
+  color: #3e5ba9;
+  font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #2a4db3;
+  color: white;
+}
+
+.dropdown-menu li:nth-child(2):hover a {
+  color: #969aa6;
+  opacity: 0.8;
+}
+
+.coming-soon {
+  color: #cbd5e1;
+  font-style: italic;
+  cursor: not-allowed;
+}
+
+/* ---------- CART ICON ---------- */
+.cart i {
+  font-size: 1.2rem;
+}
+.cart-icon {
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.15);
+  color: #2a4db3;
+}
+
+/* ---------- HAMBURGER MENU ---------- */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav.nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #1e3a8a;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav.nav.open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown-menu li a {
+    color: #dbeafe;
+    padding: 8px 0;
+  }
+
+  .dropdown-menu li a:hover {
+    background: none;
+    color: #93c5fd;
+  }
+}
+
+/* ---------- FOCUS (accessibility) ---------- */
+.category-btn:focus,
+.nav-list a:focus,
+.hamburger:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.4);
+}

@@ -1,0 +1,154 @@
+.contact-page {
+  position: relative;
+  padding: 40px 40px 60px 40px;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 0;
+  padding-bottom: 60px;
+  min-height: 100vh; /* ensures full height of viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: -3px; /* overlap header slightly */
+}
+.contact-page * {
+  margin-bottom: 0px;
+}
+footer {
+  margin-top: 0;
+}
+/* Background image */
+.contact-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://i.ibb.co/9kLchyjY/istockphoto-1028077888-1024x1024.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(1) blur(1px);
+  z-index: -2;
+}
+
+/* Fog overlay */
+.contact-page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 58, 138, 0.5); /* navy blue transparent fog */
+  z-index: -1;
+}
+
+/* Page title and intro */
+.contact-page h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  margin-bottom: 40px;
+}
+
+/* Main layout */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.contact-form label {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #f8fafc;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #2563eb;
+}
+
+.contact-form button {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2a4db3;
+}
+
+/* Contact info */
+.contact-info {
+  text-align: left;
+  width: 350px;
+  color: #f1f5f9;
+}
+
+.contact-info h3 {
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.contact-info iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 90%;
+  }
+}

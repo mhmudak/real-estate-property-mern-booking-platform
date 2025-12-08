@@ -1,0 +1,316 @@
+.bookvisit-page {
+  max-width: 900px;
+  margin: 40px auto 40px auto; /* centers page container */
+  padding: 20px;
+}
+
+/* Success Modal */
+.success-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: none;
+  background: #1e3a8a;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background: #163d80;
+}
+
+/* Property Header */
+.property-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.property-header-image {
+  width: 180px;
+  height: 130px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.property-header-info h2 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  color: #1e3a8a;
+}
+
+.agent-label {
+  font-weight: 600;
+  color: #1e40af;
+}
+
+/* Booking Form */
+/* Form Container */
+.booking-form {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eef2f7;
+  max-width: 500px;
+  margin: 0 auto; /* centers the form block */
+  text-align: left; /* ⭐ IMPORTANT: left align everything */
+}
+
+/* Form Title */
+.form-title {
+  text-align: left; /* ⭐ Left-aligned title (more professional) */
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column; /* label above input */
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Inputs */
+.form-group input {
+  padding: 14px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #e2e8f0;
+  transition: box-shadow 0.2s ease;
+  font-size: 1rem;
+}
+
+.form-group input:hover,
+.form-group input:focus {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.15); /* subtle focus halo */
+  outline: none;
+}
+
+/* FLOATING LABEL STYLE */
+.form-group.floating {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.form-group.floating input {
+  width: 100%;
+  padding: 16px 12px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-group.floating label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  background: #f8fafc;
+  padding: 0 6px;
+  color: #64748b;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+/* Floating effect when focused or filled */
+.form-group.floating input:focus + label,
+.form-group.floating input:not(:placeholder-shown) + label {
+  top: 6px;
+  font-size: 0.75rem;
+  color: #1e3a8a;
+}
+
+.form-group.floating input:focus {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+  outline: none;
+}
+
+/* Shared container for each field */
+.floating-container {
+  width: 320px; /* ⭐ SAME width for both */
+  margin: 0 auto 30px; /* center + spacing */
+  position: relative;
+}
+
+/* Floating label */
+.floating-label {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  background: white;
+  padding: 0 6px;
+  font-size: 0.9rem;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+/* Input field */
+.floating-input {
+  width: 100%; /* ⭐ FULL width so both inputs match */
+  padding: 14px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+  font-size: 1rem;
+  color: #1e3a8a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.floating-input:focus {
+  border-color: #1e3a8a;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1e3a8a, #274bbf);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #163d80;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.35);
+}
+
+.submit-btn:active {
+  transform: translateY(0px);
+}
+
+.property-meta-inline {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 15px 0px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #475569;
+  background-color: #f1f5f9;
+  padding: 5px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.meta-item:hover {
+  background-color: #e2e8f0;
+}
+
+.meta-item svg {
+  color: #2563eb;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  /* Reduce container width */
+  .floating-container {
+    width: 75%;
+    margin: 0 auto 22px;
+  }
+
+  /* Reduce padding & radius slightly */
+  .floating-input {
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+
+  /* Floating label adjusts to mobile scale */
+  .floating-label {
+    left: 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Make header image responsive */
+  .property-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .property-header-image {
+    width: 92%;
+    height: auto;
+    max-height: 210px;
+    object-fit: cover;
+  }
+
+  /* Booking form full width on mobile */
+  .booking-form {
+    padding: 20px 10px;
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  /* Button adjusts for mobile thumb size */
+  .submit-btn {
+    font-size: 1rem;
+    padding: 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+}

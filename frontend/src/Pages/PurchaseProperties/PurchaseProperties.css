@@ -1,0 +1,153 @@
+/* ===== PAGE LAYOUT ===== */
+.purchase-page {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+}
+
+/* ===== TITLE ===== */
+.purchase-title {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+/* ===== CATEGORY BUTTONS ===== */
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 20px;
+  padding: 10px 18px;
+  background: #fff;
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.category-btn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.category-btn.active {
+  background: #1e3a8a;
+  border-color: #1e3a8a;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.2);
+}
+
+.category-btn svg {
+  stroke-width: 1.8;
+}
+
+.category-btn span {
+  text-transform: none;
+}
+
+/* ===== CARD GRID ===== */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px;
+  background-color: #f4f6f8;
+}
+
+/* ===== NO RESULTS ===== */
+.no-results {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-top: 40px;
+}
+
+/* ===== LOCATION DROPDOWNS ===== */
+.location-selectors {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.dropdown-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 25px;
+  padding: 10px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-filter select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+.dropdown-filter select:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .card-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .category-container {
+    gap: 10px;
+  }
+
+  .category-btn {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .purchase-page {
+    padding: 30px 0;
+  }
+
+  .purchase-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .card-grid {
+    padding: 20px;
+    gap: 15px;
+  }
+}
