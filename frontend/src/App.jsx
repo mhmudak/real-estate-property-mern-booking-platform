@@ -7,9 +7,12 @@ import Contact from "./Pages/ContactUs/ContactUs";
 import ApartmentDetails from "./Pages/ApartmentDetails/ApartmentDetails";
 import MyFavorites from "./Pages/MyFavorites/MyFavorites";
 import BookVisit from "./Pages/BookVisit/BookVisit";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   return (
+  <>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,5 +24,8 @@ export default function App() {
         <Route path="/apartments/:id/book" element={<BookVisit />} />
       </Routes>
     </BrowserRouter>
+  
+    <ToastContainer position="top-right" autoClose={3000} />
+    </>
   );
 }

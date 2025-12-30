@@ -1,25 +1,33 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ApartmentCard from "../../components/ApartmentCard/ApartmentCard";
-import apartments from "../../data/apartmentsData";
 import locationsData from "../../data/locationsData";
+
+import { getAllProperties } from "../../services/propertyService";
 import {
   Building,
-  Home,
-  Landmark,
-  Ghost,
   Building2,
   House,
+  Landmark,
+  Home,
   MapPin,
+  Ghost,
 } from "lucide-react";
+
 import "./PurchaseProperties.css";
 
 export default function PurchaseProperties() {
+  const [properties, setProperties] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedRegion, setSelectedRegion] = useState("All");
   const [selectedCity, setSelectedCity] = useState("All");
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const categories = [
     { label: "All", icon: Building },
@@ -27,20 +35,60 @@ export default function PurchaseProperties() {
     { label: "Villa", icon: House },
     { label: "Land", icon: Landmark },
     { label: "House", icon: Home },
+    { label: "Studio", icon: Home },
     { label: "Chalet & cabin", icon: Home },
   ];
 
-  // Filter apartments based on selected filters
-  const filtered = apartments.filter((a) => {
-    const matchCategory =
-      selectedCategory === "All" || a.type === selectedCategory;
+  // ---------------------------
+  // 1️⃣ Load data from MongoDB
+  // ---------------------------
+  useEffect(() => {
+    let cancelled = false;
 
-    const matchRegion = selectedRegion === "All" || a.region === selectedRegion;
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError("");
 
-    const matchCity = selectedCity === "All" || a.city === selectedCity;
+        const res = await getAllProperties();
+        if (!cancelled) {
+          setProperties(res.data.data); // backend returns { success, data }
+          setFiltered(res.data.data);
+        }
+      } catch (err) {
+        if (!cancelled) setError("Failed to load properties.");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
 
-    return matchCategory && matchRegion && matchCity;
-  });
+    fetchData();
+    return () => (cancelled = true);
+  }, []);
+
+  // ---------------------------
+  // 2️⃣ Apply filters whenever filters change
+  // ---------------------------
+  useEffect(() => {
+    let temp = [...properties];
+
+    if (selectedCategory !== "All") {
+      temp = temp.filter((p) => p.type === selectedCategory);
+    }
+
+    if (selectedRegion !== "All") {
+      temp = temp.filter((p) => p.region === selectedRegion);
+    }
+
+    if (selectedCity !== "All") {
+      temp = temp.filter((p) => p.city === selectedCity);
+    }
+
+    setFiltered(temp);
+  }, [selectedCategory, selectedRegion, selectedCity, properties]);
+
+  if (loading) return <p className="loading">Loading properties...</p>;
+  if (error) return <p className="error">{error}</p>;
 
   return (
     <>
@@ -49,14 +97,12 @@ export default function PurchaseProperties() {
       <div className="purchase-page">
         <h1 className="purchase-title">Find Your Perfect Property</h1>
 
-        {/* Category Filter */}
+        {/* CATEGORY FILTERS */}
         <div className="category-container">
           {categories.map(({ label, icon: Icon }) => (
             <button
               key={label}
-              className={`category-btn ${
-                selectedCategory === label ? "active" : ""
-              }`}
+              className={`category-btn ${selectedCategory === label ? "active" : ""}`}
               onClick={() => setSelectedCategory(label)}
             >
               <Icon size={20} />
@@ -65,7 +111,7 @@ export default function PurchaseProperties() {
           ))}
         </div>
 
-        {/* Region & City Selectors */}
+        {/* REGION & CITY FILTERS */}
         <div className="location-selectors">
           <div className="dropdown-filter">
             <MapPin size={18} />
@@ -94,7 +140,7 @@ export default function PurchaseProperties() {
             >
               <option value="All">All Cities</option>
               {selectedRegion !== "All" &&
-                locationsData[selectedRegion].map((city) => (
+                locationsData[selectedRegion]?.map((city) => (
                   <option key={city} value={city}>
                     {city}
                   </option>
@@ -103,15 +149,13 @@ export default function PurchaseProperties() {
           </div>
         </div>
 
-        {/* Properties List */}
+        {/* PROPERTIES LIST */}
         <div className="card-grid">
           {filtered.length > 0 ? (
-            filtered.map((apt) => <ApartmentCard key={apt.id} {...apt} />)
+            filtered.map((property) => <ApartmentCard key={property._id} id={property._id} {...property} />)
           ) : (
             <div className="no-results">
-              <div>
-                <Ghost size={24} />
-              </div>
+              <Ghost size={24} />
               No properties found.
             </div>
           )}

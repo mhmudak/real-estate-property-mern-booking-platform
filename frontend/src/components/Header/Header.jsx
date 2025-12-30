@@ -1,12 +1,45 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AuthPopup from "../AuthPopup/AuthPopup";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showAuth, setShowAuth] = useState(false);
+
+  // login state
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [showAuthPopup, setShowAuthPopup] = useState(false);
+
+  /*  
+  ==========================================
+   useEffect → run once on page load
+  ==========================================
+  */
+  useEffect(() => {
+    const stored = localStorage.getItem("isLoggedIn");
+    if (stored === "true") {
+      setIsLoggedIn(true);
+    }
+
+    // 🔑 GLOBAL TRIGGER
+    window.openAuthPopup = () => {
+      setShowAuthPopup(true);
+      setMenuOpen(false);
+    };
+  }, []); // runs ONCE when Header mounts
+
+  /*  
+  ==========================================
+   LOGOUT HANDLER
+  ==========================================
+  */
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    setIsLoggedIn(false);
+    setMenuOpen(false);
+  };
 
   return (
     <header>
@@ -54,31 +87,47 @@ function Header() {
               About
             </Link>
           </li>
+
           <li>
             <Link to="/contact" onClick={() => setMenuOpen(false)}>
               Contact Us
             </Link>
           </li>
+
+          {/* LOGIN OR LOGOUT */}
           <li>
-            <Link
-              className="login-btn"
-              onClick={() => {
-                setShowAuth(true);
-                setMenuOpen(false);
-              }}
-            >
-              Login
-            </Link>
+            {!isLoggedIn ? (
+              <Link
+                className="login-btn"
+                onClick={() => {
+                  setShowAuthPopup(true);
+                  setMenuOpen(false);
+                }}
+              >
+                Login
+              </Link>
+            ) : (
+              <Link className="login-btn" onClick={handleLogout}>
+                Logout
+              </Link>
+            )}
           </li>
-          {/* <li>
-            <a href="#" className="cart" onClick={() => setMenuOpen(false)}>
-              <i className="fas fa-shopping-cart"></i>
-            </a>
-          </li> */}
         </ul>
       </nav>
-      {showAuth && (
-        <AuthPopup isOpen={showAuth} onClose={() => setShowAuth(false)} />
+
+      {/* AuthPopup */}
+      {showAuthPopup && (
+        <AuthPopup
+          isOpen={showAuthPopup}
+          onClose={() => {
+            setShowAuthPopup(false);
+
+            // when auth popup closes → check localStorage for login
+            if (localStorage.getItem("isLoggedIn") === "true") {
+              setIsLoggedIn(true);
+            }
+          }}
+        />
       )}
     </header>
   );

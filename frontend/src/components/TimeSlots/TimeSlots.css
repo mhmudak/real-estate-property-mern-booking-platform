@@ -1,0 +1,73 @@
+.slots-container {
+  margin-top: 25px;
+}
+
+.slots-title {
+  color: #1e3a8a;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* Horizontal Slot Display */
+.slots-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 8px 4px 20px 10px;
+}
+
+/* Slot Button */
+.slot-btn {
+  padding: 14px 16px;
+  min-width: 92px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1rem;
+
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(30, 58, 138, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  color: #1e3a8a;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.slot-btn:hover {
+  background: rgba(30, 58, 138, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Selected */
+.slot-btn.selected {
+  background: linear-gradient(135deg, #1e3a8a, #3b5fd2);
+  color: white;
+  border-color: #1e3a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(30, 58, 138, 0.35);
+}
+
+/* Disabled */
+.slot-btn.disabled {
+  background: #e2e8f0;
+  color: #64748b;
+  border-color: #cbd5e1;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.slot-btn.disabled:hover {
+  transform: none;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .slot-btn {
+    min-width: 70px;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}

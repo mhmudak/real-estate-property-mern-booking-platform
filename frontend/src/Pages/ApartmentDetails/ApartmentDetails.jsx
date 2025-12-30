@@ -16,14 +16,14 @@ import {
   Tag,
   CheckCircle,
   XCircle,
-  Heart, // ✅ FIX: import Heart icon
+  Heart,
+  ArrowLeft, // ✅ FIX: import Heart icon
 } from "lucide-react";
 import "./ApartmentDetails.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
 
 export default function ApartmentDetails() {
   const navigate = useNavigate();
@@ -67,7 +67,7 @@ export default function ApartmentDetails() {
     tags,
     agent,
   } = state;
-
+  console.log(state);
   function NextArrow({ onClick }) {
     return (
       <div className="slick-arrow next" onClick={onClick}>
@@ -96,7 +96,10 @@ export default function ApartmentDetails() {
 
   return (
     <>
-      
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        <ArrowLeft size={18} className="arrow" /> BACK
+      </button>
+
       <div className="apartment-details-page">
         {/* 🖼️ Image Carousel */}
         <div className="image-carousel">

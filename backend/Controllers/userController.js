@@ -1,27 +1,27 @@
 const { validationResult } = require('express-validator');
 const { signupService } = require('../Services/userService');
 
-const signupController = (req, res) => {
+const signupController = async (req, res) => {
     const errors = validationResult(req);
     try {
         if (!errors.isEmpty()) {
             return res.status(400).json({
                 success: false,
-                errors: errors.array([0]),
+                error: errors.array(),
                 message: "Validation Error!"
-            })
+            });
         }
-        const { username, password, firstname, lastname, email } = req.body;
-        const response = signupService(username, password, firstname, lastname, email);
+        const { firstname, lastname, email, password, phoneNumber, city } = req.body;
+        const response = await signupService(firstname, lastname, email, password, phoneNumber, city);
         res.status(201).json({
             success: true,
-            data: response,
+            user: response,
             message: "Signup Successfully!"
         })
-    } catch (err) {
+    } catch (error) {
         res.status(500).json({
             success: false,
-            data: err.message,
+            error: error.message,
             message: "Server error!"
         });
     }

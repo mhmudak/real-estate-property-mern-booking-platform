@@ -1,3 +1,13 @@
+.myBlueToast .Toastify__progress-bar--success {
+  background: var(--toastify-color-progress-light) !important;
+  color: white !important;
+  font-weight: 500;
+}
+
+.myBlueToast .Toastify__toast-icon svg {
+  /* filter: invert(20%) sepia(60%) saturate(3000%) hue-rotate(200deg) brightness(90%); */
+  fill: #365abc;
+}
 
 a {
   font-weight: 500;
@@ -48,7 +58,7 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
 @media (prefers-color-scheme: light) {
